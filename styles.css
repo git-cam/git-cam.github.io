@@ -32,7 +32,7 @@ body {
 }
 [data-page="home"]{
     overflow: auto; /* Hide scroll bar */
-    position:fixed; /* or absolute if the content exceeds the height of the page */
+    position: fixed; /* or absolute if the content exceeds the height of the page */
     background-image: url("portbg1.png");
     background-size: cover; /* Adjust as needed */
     background-position: center; /* Adjust as needed */
@@ -100,29 +100,59 @@ p{
     font-family: 'Signika', sans-serif;
     font-size: 17px;
     font-weight: 300;
+    max-width: 600px; /* Set a maximum width for the paragraph */
+}
+@media (max-width: 768px) {
+  p {
+      max-width: none; /* Remove the maximum width for smaller screens */
+  }
 }
 .icon-container {
-    max-width: 200px; /* Adjust the max-width as needed */
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-    color: #022449;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 200px; /* Set your maximum spacing */
+  margin: 0 auto; /* Center the container */
+  color: #022449;
 }
 
 .icon {
-    margin-right: 20px; /* Adjust the margin as needed */
-    transition: color 0.3s ease; /* Add transition for smooth effect */
-    color:#022449;
+  width: 50px;
+  
+  display: flex;
+  align-items: center; /* Center the icon vertically */
+  margin-right: 20px; /* Adjust the margin as needed */
+  transition: color 0.3s ease; /* Add transition for smooth effect */
+  color: #022449;
 }
 
 .icon-container a i {
-    color: #022449;
-    transition: color 0.3s ease;
+  font-size: 1.3rem; /* Adjust the icon size */
+  color: #022449;
+  transition: color 0.3s ease;
 }
 
 .icon-container a i:hover {
-    color: gold; /* Change color on hover */
+  color: gold; /* Change color on hover */
 }
+
+@media (max-width: 768px) {
+  .icon-container{
+    max-width: 150px; /* Set your maximum spacing */
+  }
+
+
+.icon-container a {
+    margin-right: 0px; /* Reduce spacing for smaller screens */
+}
+.icon-container a i {
+  font-size: 3rem; /* Adjust the icon size */
+  color: #022449;
+  transition: color 0.3s ease;
+}
+}
+
 
 .to-projects-button {
     display: flex;
@@ -154,6 +184,11 @@ p{
     transition: color 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .to-home-button a i{
+    font-size: 3rem;
+  }
+}
 .to-home-button {
     display: flex;
     justify-content: center;
