@@ -13,7 +13,7 @@ body {
     font: 1rem/1.6 sans-serif;
     width:100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     
     
 }
@@ -31,7 +31,7 @@ body {
     z-index: 10;
 }
 [data-page="home"]{
-    overflow: hidden; /* Hide scroll bar */
+    overflow: auto; /* Hide scroll bar */
     position:fixed; /* or absolute if the content exceeds the height of the page */
     background-image: url("portbg1.png");
     background-size: cover; /* Adjust as needed */
