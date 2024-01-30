@@ -1,215 +1,175 @@
-/****
-styles.css
-****/
-*{
-    padding:0;
-    margin: 0;
-    box-sizing: border-box;
-}
-:root {
-    font-size: calc(1vw + 1vh + .5vmin);
-}
-body {
-    font: 1rem/1.6 sans-serif;
-    width:100%;
-    min-height: 100vh;
-    overflow: auto;
+/* Custom styles for the navbar */
+.navbar-custom {
     
-    
-}
-[data-page]{
-    
-    width: 100%;
-    min-height: 100vh;
-    transform: translate3d(0, 100%, 0);
-    opacity: 0;
-    transition: transform 0.5s ease-in, opacity 0.5s ease-in; 
-    /*
-    left: 100%;
-    transition: left 1.0s ease-in; 
-    */
-    z-index: 10;
-}
-[data-page="home"]{
-    overflow: auto; /* Hide scroll bar */
-    position: fixed; /* or absolute if the content exceeds the height of the page */
-    background-image: url("portbg1.png");
-    background-size: cover; /* Adjust as needed */
-    background-position: center; /* Adjust as needed */
-    background-repeat: no-repeat; /* Adjust as needed */
-    /*background-color: hsl(90, 70%, 20%);*/
-    color: #C8EFF9;
-}
-[data-page="other"]{
-    overflow: auto;
-    position:absolute;
-    background-color: #022449;
-    color:  #C8EFF9;
-}
-[data-page].active{
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    /**
-    left: 0;
-    **/
-    z-index: 100;
-}
-[data-role="link"]{
-    color: white;
-}
-section h1{
-    /*padding: 1rem;*/
-    text-align: center;
-}
-section p{
-    color: #022449;
-    padding: 0rem 0rem;
-}
-p1{
-  color: #55bdca;
-  padding: 0rem 0rem;
-  font-family: 'Signika', sans-serif;
-    font-size: 30px;
-    font-weight: 300;
-    max-width: 10%;
-}
-
-h7{
-  color: #F27D42;
+    background-color: #55bdca; /* Replace with your custom color code */
     font-family: 'Signika', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
+    
+    font-weight: 300;
 }
-
-
-
-h1{
+  
+  /* Custom styles for the active link */
+  h1{
     color: #F27D42;
     font-family: 'Signika', sans-serif;
     font-size: 80px;
     font-weight: 500;
+
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    z-index: 3;
 }
-h4{
-    color: #022449;
-    font-family: 'Signika', sans-serif;
-    font-size: 60px;
-    font-weight: 500;
-}
-p{
-    color: #ffffff;
+p {
+    color: black;
     font-family: 'Signika', sans-serif;
     font-size: 17px;
     font-weight: 300;
+
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
     max-width: 600px; /* Set a maximum width for the paragraph */
+    min-width: auto;
+
+    text-align: left; /* Align the text to the left */
+
+    z-index: 3;
 }
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
-  p {
-      max-width: none; /* Remove the maximum width for smaller screens */
-  }
+    p {
+        max-width: none; /* Remove the maximum width for smaller screens */
+    }
 }
+
+.card-deck {
+    
+    flex-wrap: wrap;
+    margin: -15px; /* Adjust the value as needed */
+}
+
+.card {
+    border-radius: 15px; /* Rounded edges */
+    flex: 1;
+    margin: 15px; 
+}
+
 .icon-container {
-  display: flex;
-  padding-top: 20px;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 200px; /* Set your maximum spacing */
-  margin: 0 auto; /* Center the container */
-  color: #022449;
-}
-
-.icon {
-  width: 50px;
-  
-  display: flex;
-  align-items: center; /* Center the icon vertically */
-  margin-right: 20px; /* Adjust the margin as needed */
-  transition: color 0.3s ease; /* Add transition for smooth effect */
-  color: #022449;
-}
-
-.icon-container a i {
-  font-size: 1.3rem; /* Adjust the icon size */
-  color: #022449;
-  transition: color 0.3s ease;
-}
-
-.icon-container a i:hover {
-  color: gold; /* Change color on hover */
-}
-
-@media (max-width: 768px) {
-  .icon-container{
-    max-width: 150px; /* Set your maximum spacing */
-  }
-
-
-.icon-container a {
-    margin-right: 0px; /* Reduce spacing for smaller screens */
-}
-.icon-container a i {
-  font-size: 3rem; /* Adjust the icon size */
-  color: #022449;
-  transition: color 0.3s ease;
-}
-}
-
-
-.to-projects-button {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+    justify-content: space-between;
+    max-width: 200px; /* Set your maximum spacing */
+    margin: -1 auto; /* Center the container */
 
-.to-projects-button a {
-    text-decoration: none; /* Remove underline from the link */
-    color: #022449;
-    transition: color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    z-index: 3;
 
-.to-projects-button a:hover {
-    color: gold; /* Change to your desired hover color */
-    /*transition: color 0.3s ease;*/
-}
-
-.to-projects-button a:hover h4,
-.to-projects-button a:hover i {
-    color: gold; /* Change to your desired hover color */
-    transition: color 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .to-home-button a i{
-    font-size: 3rem;
-  }
-}
-.to-home-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px; /* Adjust the margin as needed */
+    
+    
     
 }
 
-.to-home-button a {
-    text-decoration: none; /* Remove underline from the link */
-    color: #F27D42;
-    transition: color 0.3s ease; /* Add transition for smooth effect */
-    display: flex;
-}
-
-.to-home-button a:hover i {
-    color: gold; /* Change color on hover */
+.icon-container a {
+    margin-left: 40px; /* Initial spacing between icons */
+    color: #19bdcb;
     transition: color 0.3s ease;
+
+    z-index: 3;
+}
+
+.icon-container i {
+    font-size: 3rem; /* Adjust the default icon size */
+
+    z-index: 3;
+}
+.icon-container a:hover {
+    color: #F27D42; /* Set the hover color */
+
+    z-index: 3;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .icon-container {
+        justify-content: flex-start; /* Align the icons to the left */
+    }
+
+    .icon-container a {
+        margin-right: 10px; /* Reduce spacing for smaller screens */
+    }
+}
+
+.cloud {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.cloud div {
+    position: absolute;
+    display: block;
+    z-index: 2;
+}
+
+.cloud .cloud-1 {
+    animation: fall 40s linear infinite;
+}
+
+.cloud .cloud-2 {
+    animation: fall 50s linear infinite;
+    animation-delay: -5s;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        top: -10vh; /* Adjust based on desired starting position */
+        left: 80vw; /* Adjust based on desired starting position */
+    }
+    100% {
+        opacity: 1;
+        top: -10vh; /* Adjust based on desired ending position */
+        left: -1400px; /* Adjust based on desired ending position */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cloud .cloud-1 {
+        animation: fall 30s linear infinite;
+    }
+    .cloud .cloud-2 {
+        animation: fall 40s linear infinite;
+        animation-delay: -3s;
+    }
 }
 
 
+
+
+.text-container {
+    overflow: auto; /* or overflow: scroll; depending on your preference */
+    max-height: auto; /* Adjust as needed */
+    /* Other styles */
+    position: relative;
+    z-index: 3;
+}
+
+.animation-container {
+    /* Ensure animation doesn't get cut off */
+    overflow: hidden; /* Prevent scrollbar from appearing */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Set the height to match the viewport height */
+    z-index: 2; /* Ensure the animation is behind the text content */
+}
 
 
 
@@ -242,7 +202,7 @@ article {
   article h2 {
     margin: 0 0 18px 0;
     font-family: 'Signika', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     letter-spacing: 0.06em;
     color: var(--title-color);
     transition: color 0.3s ease-out;
@@ -282,9 +242,12 @@ article {
     width: 24px;
     height: 24px;
     margin-left: 5px;
-    transform: translateX(var(--link-icon-translate));
+    
+    transform: translateX(var(--link-icon-translate)) translateY(-9px); /* Combine both translations */
     opacity: var(--link-icon-opacity);
     transition: all 0.3s;
+
+    
   }
   
   /* using the has() relational pseudo selector to update our custom properties */
@@ -292,6 +255,7 @@ article {
     --img-scale: 1.1;
     --title-color: grey;
     --link-icon-translate: 0;
+
     --link-icon-opacity: 1;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
@@ -304,27 +268,4 @@ article {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
   }
-  @container card (min-width: 380px) {
-    .article-wrapper {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 16px;
-    }
-    .article-body {
-      padding-left: 0;
-    }
-    figure {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    figure img {
-      height: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-  }
   
-  .max-width-30 {
-    max-width: 30%;
-}
